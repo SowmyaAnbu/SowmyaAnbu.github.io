@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio — Your Name</title>
+    <title>Portfolio — Sowmeya Selvamani</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -689,6 +689,9 @@
             font-size: 0.95rem;
             font-weight: 600;
             transition: gap 0.3s ease;
+            position: relative;
+            z-index: 10;
+            cursor: pointer;
         }
 
         .project-link:hover {
@@ -988,46 +991,22 @@
         <section class="projects" id="work">
             <div class="section-header">
                 <h3>Selected Work</h3>
-                <span class="count">03 Projects</span>
+                <span class="count">01 Project</span>
             </div>
             <div class="projects-grid">
-                <!-- Project 1 -->
-                <article class="project-card scroll-reveal">
+                <!-- Crown Clothing E-commerce -->
+                <article class="project-card">
                     <div class="project-number">01</div>
-                    <h4>Project Title One</h4>
-                    <p class="project-description">A revolutionary approach to [describe your project]. This project explores the intersection of design and technology to create something truly unique.</p>
+                    <h4>Crown Clothing</h4>
+                    <p class="project-description">A modern e-commerce platform for fashion retail featuring shopping cart functionality, product catalog with categorization, and secure checkout flow. Built with React and Context API for seamless state management and responsive user experience.</p>
                     <div class="project-tags">
                         <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Design</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Context API</span>
+                        <span class="tag">E-commerce</span>
+                        <span class="tag">Responsive Design</span>
                     </div>
-                    <a href="#" class="project-link">View Project</a>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="project-card scroll-reveal">
-                    <div class="project-number">02</div>
-                    <h4>Project Title Two</h4>
-                    <p class="project-description">An innovative solution that reimagines [describe your project]. Built with modern technologies and a focus on user experience.</p>
-                    <div class="project-tags">
-                        <span class="tag">Vue.js</span>
-                        <span class="tag">API</span>
-                        <span class="tag">UX</span>
-                    </div>
-                    <a href="#" class="project-link">View Project</a>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="project-card scroll-reveal">
-                    <div class="project-number">03</div>
-                    <h4>Project Title Three</h4>
-                    <p class="project-description">A comprehensive platform that transforms [describe your project]. Designed to be intuitive, powerful, and scalable.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Database</span>
-                        <span class="tag">Cloud</span>
-                    </div>
-                    <a href="#" class="project-link">View Project</a>
+                    <a href="https://69a2cd4f78efd32e1a5361c8--crown-clothingv3.netlify.app/" target="_blank" class="project-link">View Live Site</a>
                 </article>
             </div>
         </section>
@@ -1041,10 +1020,8 @@
                 <div class="footer-section">
                     <h5>Connect</h5>
                     <ul class="footer-links">
-                        <li><a href="/cdn-cgi/l/email-protection#0c7563797e4c69616d6560226f6361">Email</a></li>
-                        <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
-                        <li><a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://twitter.com/yourusername" target="_blank">Twitter</a></li>
+                        <li><a href="mailto:s.sowmeya@gmail.com">Email</a></li>
+                        <li><a href="https://github.com/SowmyaAnbu" target="_blank">GitHub</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1052,8 +1029,6 @@
                     <ul class="footer-links">
                         <li><a href="#work">Projects</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/resume.pdf">Resume</a></li>
                     </ul>
                 </div>
             </div>
@@ -1064,7 +1039,7 @@
         </footer>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Scroll progress bar
         const scrollProgress = document.querySelector('.scroll-progress');
         window.addEventListener('scroll', () => {

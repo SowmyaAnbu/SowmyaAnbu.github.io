@@ -157,21 +157,7 @@
             position: relative;
         }
 
-        h1::after {
-            content: '';
-            position: absolute;
-            right: -8px;
-            bottom: 0;
-            width: 2px;
-            height: 100%;
-            background: var(--accent);
-            animation: blink 1s step-end infinite;
-        }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
 
         .tagline {
             font-size: 0.95rem;
@@ -959,7 +945,7 @@
             <div class="hero-grid">
                 <div class="hero-text">
                     <h2>Building robust applications with Java & modern tech.</h2>
-                    <p>Specialized in full stack development with Java, Spring Boot, and modern frameworks. I transform complex business requirements into scalable, maintainable solutions that drive real impact.</p>
+                    <p>Specialized in full stack development with Java, Spring, and modern frameworks. Transforming complex business requirements into secure, maintainable solutions that drive real impact.</p>
                     <a href="#work" class="cta-button">View My Work</a>
                 </div>
                 <div class="hero-visual">
@@ -967,21 +953,21 @@
                         <div class="card-content">
                             <div class="card-icon">☕</div>
                             <div class="card-title">Backend</div>
-                            <div class="card-desc">Java, Spring Boot, Microservices</div>
+                            <div class="card-desc">Java, Spring, Spring MVC, Spring Integration, JMS, ActiveMQ</div>
                         </div>
                     </div>
                     <div class="floating-card">
                         <div class="card-content">
                             <div class="card-icon">⚡</div>
                             <div class="card-title">Frontend</div>
-                            <div class="card-desc">React, Angular, Modern JavaScript</div>
+                            <div class="card-desc">React, Redux, JavaScript, JSP, HTML, CSS</div>
                         </div>
                     </div>
                     <div class="floating-card">
                         <div class="card-content">
                             <div class="card-icon">🗄️</div>
-                            <div class="card-title">Database</div>
-                            <div class="card-desc">SQL, MongoDB, Redis</div>
+                            <div class="card-title">Database & Tools</div>
+                            <div class="card-desc">Oracle, SQL Server, Docker, Jenkins, Git, SonarQube</div>
                         </div>
                     </div>
                 </div>
@@ -1001,12 +987,15 @@
                     <p class="project-description">A modern e-commerce platform for fashion retail featuring shopping cart functionality, product catalog with categorization, and secure checkout flow. Built with React and Context API for seamless state management and responsive user experience.</p>
                     <div class="project-tags">
                         <span class="tag">React</span>
+                        <span class="tag">Redux</span>
                         <span class="tag">JavaScript</span>
-                        <span class="tag">Context API</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">Stripe</span>
+                        <span class="tag">SCSS</span>
+                        <span class="tag">Styled Components</span>
                         <span class="tag">E-commerce</span>
-                        <span class="tag">Responsive Design</span>
                     </div>
-                    <a href="https://69a2cd4f78efd32e1a5361c8--crown-clothingv3.netlify.app/" target="_blank" class="project-link">View Live Site</a>
+                    <a href="https://crown-clothingv3.netlify.app/" target="_blank" class="project-link">View Live Site</a>
                 </article>
             </div>
         </section>
@@ -1039,7 +1028,7 @@
         </footer>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Scroll progress bar
         const scrollProgress = document.querySelector('.scroll-progress');
         window.addEventListener('scroll', () => {
@@ -1164,8 +1153,7 @@
                 }
             });
         });
-
-        // Project card tilt effect
+         // Project card tilt effect
         const projectCards = document.querySelectorAll('.project-card');
         
         projectCards.forEach(card => {
@@ -1188,5 +1176,3 @@
                     scale(1.02)
                 `;
             });
-            
-            

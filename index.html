@@ -32,7 +32,6 @@
             position: relative;
         }
 
-        /* Animated gradient background */
         body::before {
             content: '';
             position: fixed;
@@ -54,7 +53,6 @@
             66% { transform: translate(-5%, 5%) rotate(240deg); }
         }
 
-        /* Animated particles */
         .particles {
             position: fixed;
             top: 0;
@@ -77,20 +75,10 @@
         }
 
         @keyframes particleFloat {
-            0% {
-                opacity: 0;
-                transform: translateY(100vh) scale(0);
-            }
-            10% {
-                opacity: 0.6;
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-100vh) scale(1);
-            }
+            0% { opacity: 0; transform: translateY(100vh) scale(0); }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { opacity: 0; transform: translateY(-100vh) scale(1); }
         }
 
         .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
@@ -112,27 +100,16 @@
             z-index: 2;
         }
 
-        /* Header with glass effect */
         header {
             padding: 30px 0;
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(20px) saturate(180%);
-            background: rgba(15, 15, 30, 0.7);
             border-bottom: 1px solid var(--border);
             z-index: 100;
             animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-100%); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .header-content {
@@ -154,10 +131,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: fadeIn 0.8s ease-out 0.2s both;
-            position: relative;
         }
-
-
 
         .tagline {
             font-size: 0.95rem;
@@ -200,14 +174,8 @@
             z-index: 1;
         }
 
-        nav a:hover::before {
-            opacity: 1;
-        }
-
-        nav a:hover {
-            color: white;
-            transform: translateY(-2px);
-        }
+        nav a:hover::before { opacity: 1; }
+        nav a:hover { color: white; transform: translateY(-2px); }
 
         /* Hero Section */
         .hero {
@@ -235,14 +203,8 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-text p {
@@ -272,12 +234,8 @@
         }
 
         @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 10px 40px -10px rgba(99, 102, 241, 0.6);
-            }
-            50% {
-                box-shadow: 0 10px 60px -5px rgba(99, 102, 241, 0.9);
-            }
+            0%, 100% { box-shadow: 0 10px 40px -10px rgba(99, 102, 241, 0.6); }
+            50% { box-shadow: 0 10px 60px -5px rgba(99, 102, 241, 0.9); }
         }
 
         .cta-button::before {
@@ -291,14 +249,8 @@
             transition: left 0.6s ease;
         }
 
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 60px -10px rgba(99, 102, 241, 0.8);
-        }
+        .cta-button:hover::before { left: 100%; }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 20px 60px -10px rgba(99, 102, 241, 0.8); }
 
         .cta-button::after {
             content: '→';
@@ -319,7 +271,7 @@
         /* 3D Floating Cards Visual */
         .hero-visual {
             position: relative;
-            height: 600px;
+            height: 620px;
             animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
             perspective: 1000px;
         }
@@ -330,7 +282,7 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
             border-radius: 24px;
-            padding: 30px;
+            padding: 24px;
             box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.3);
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -342,28 +294,28 @@
         }
 
         .floating-card:nth-child(1) {
-            top: 10%;
+            top: 5%;
             left: 0;
             width: 260px;
-            height: 180px;
+            /* FIX: removed fixed height so content can expand naturally */
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
             animation: float1 6s ease-in-out infinite;
         }
 
         .floating-card:nth-child(2) {
-            top: 40%;
-            right: 10%;
-            width: 220px;
-            height: 220px;
+            top: 38%;
+            right: 5%;
+            width: 230px;
+            /* FIX: removed fixed height */
             background: linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(99, 102, 241, 0.1));
             animation: float2 8s ease-in-out infinite;
         }
 
         .floating-card:nth-child(3) {
-            bottom: 10%;
-            left: 15%;
+            bottom: 5%;
+            left: 10%;
             width: 280px;
-            height: 160px;
+            /* FIX: removed fixed height so Database & Tools text doesn't overflow */
             background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(34, 211, 238, 0.1));
             animation: float3 7s ease-in-out infinite;
         }
@@ -371,82 +323,60 @@
         .card-content {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .card-icon {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             border-radius: 12px;
             background: linear-gradient(135deg, var(--accent), var(--secondary));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 22px;
+            flex-shrink: 0;
             animation: iconBounce 3s ease-in-out infinite;
             box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
         }
 
         @keyframes iconBounce {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            25% {
-                transform: translateY(-5px) rotate(-5deg);
-            }
-            75% {
-                transform: translateY(-5px) rotate(5deg);
-            }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-5px) rotate(-5deg); }
+            75% { transform: translateY(-5px) rotate(5deg); }
         }
 
-        .floating-card:nth-child(1) .card-icon {
-            animation-delay: 0s;
-        }
-
-        .floating-card:nth-child(2) .card-icon {
-            animation-delay: 1s;
-        }
-
-        .floating-card:nth-child(3) .card-icon {
-            animation-delay: 2s;
-        }
+        .floating-card:nth-child(1) .card-icon { animation-delay: 0s; }
+        .floating-card:nth-child(2) .card-icon { animation-delay: 1s; }
+        .floating-card:nth-child(3) .card-icon { animation-delay: 2s; }
 
         .card-title {
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
+        /* FIX: allow text to wrap naturally, no overflow */
         .card-desc {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--muted);
-            line-height: 1.5;
+            line-height: 1.6;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         @keyframes float1 {
-            0%, 100% {
-                transform: translateY(0) rotateY(0deg) rotateX(0deg);
-            }
-            50% {
-                transform: translateY(-25px) rotateY(5deg) rotateX(-2deg);
-            }
+            0%, 100% { transform: translateY(0) rotateY(0deg) rotateX(0deg); }
+            50% { transform: translateY(-25px) rotateY(5deg) rotateX(-2deg); }
         }
 
         @keyframes float2 {
-            0%, 100% {
-                transform: translateY(0) rotateY(0deg) rotateX(0deg);
-            }
-            50% {
-                transform: translateY(-30px) rotateY(-5deg) rotateX(2deg);
-            }
+            0%, 100% { transform: translateY(0) rotateY(0deg) rotateX(0deg); }
+            50% { transform: translateY(-30px) rotateY(-5deg) rotateX(2deg); }
         }
 
         @keyframes float3 {
-            0%, 100% {
-                transform: translateY(0) rotateY(0deg) rotateX(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotateY(3deg) rotateX(-3deg);
-            }
+            0%, 100% { transform: translateY(0) rotateY(0deg) rotateX(0deg); }
+            50% { transform: translateY(-20px) rotateY(3deg) rotateX(-3deg); }
         }
 
         /* Projects Section */
@@ -473,22 +403,13 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, 
-                transparent, 
-                var(--accent) 20%, 
-                var(--secondary) 40%,
-                var(--accent) 60%,
-                transparent 80%);
+            background: linear-gradient(90deg, transparent, var(--accent) 20%, var(--secondary) 40%, var(--accent) 60%, transparent 80%);
             animation: shimmer 3s ease-in-out infinite;
         }
 
         @keyframes shimmer {
-            0% {
-                background-position: -100% 0;
-            }
-            100% {
-                background-position: 200% 0;
-            }
+            0% { background-position: -100% 0; }
+            100% { background-position: 200% 0; }
         }
 
         .section-header {
@@ -558,13 +479,8 @@
             pointer-events: none;
         }
 
-        .project-card:hover::before {
-            opacity: 1;
-        }
-
-        .project-card:hover::after {
-            opacity: 1;
-        }
+        .project-card:hover::before { opacity: 1; }
+        .project-card:hover::after { opacity: 1; }
 
         .project-card:hover {
             transform: translateY(-8px);
@@ -582,34 +498,10 @@
             font-weight: 600;
             font-family: 'Fira Code', monospace;
             margin-bottom: 24px;
-            animation: numberScale 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes numberScale {
-            0% {
-                transform: scale(0) rotate(-180deg);
-                opacity: 0;
-            }
-            60% {
-                transform: scale(1.2) rotate(10deg);
-            }
-            100% {
-                transform: scale(1) rotate(0deg);
-                opacity: 1;
-            }
         }
 
         .project-card:hover .project-number {
-            animation: numberPulse 0.8s ease infinite;
-        }
-
-        @keyframes numberPulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
+            opacity: 1;
         }
 
         .project-card h4 {
@@ -621,9 +513,7 @@
             transition: color 0.3s ease;
         }
 
-        .project-card:hover h4 {
-            color: var(--accent-light);
-        }
+        .project-card:hover h4 { color: var(--accent-light); }
 
         .project-description {
             color: var(--muted);
@@ -653,17 +543,6 @@
         .project-card:hover .tag {
             background: rgba(99, 102, 241, 0.15);
             border-color: var(--accent);
-            transform: translateY(-2px);
-            animation: tagPulse 0.6s ease;
-        }
-
-        @keyframes tagPulse {
-            0%, 100% {
-                transform: translateY(-2px) scale(1);
-            }
-            50% {
-                transform: translateY(-4px) scale(1.05);
-            }
         }
 
         .project-link {
@@ -680,9 +559,7 @@
             cursor: pointer;
         }
 
-        .project-link:hover {
-            gap: 12px;
-        }
+        .project-link:hover { gap: 12px; }
 
         .project-link::after {
             content: '→';
@@ -690,14 +567,14 @@
             transition: transform 0.3s ease;
         }
 
-        .project-link:hover::after {
-            transform: translateX(4px);
-        }
+        .project-link:hover::after { transform: translateX(4px); }
+
+
 
         /* Footer */
         footer {
             padding: 80px 0 40px;
-            margin-top: 120px;
+            margin-top: 40px;
             position: relative;
         }
 
@@ -744,13 +621,9 @@
             font-weight: 600;
         }
 
-        .footer-links {
-            list-style: none;
-        }
+        .footer-links { list-style: none; }
 
-        .footer-links li {
-            margin-bottom: 14px;
-        }
+        .footer-links li { margin-bottom: 14px; }
 
         .footer-links a {
             color: var(--muted);
@@ -776,55 +649,23 @@
 
         /* Responsive */
         @media (max-width: 968px) {
-            .container {
-                padding: 0 30px;
-            }
+            .container { padding: 0 30px; }
+            .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+            .hero-visual { height: auto; min-height: 500px; }
 
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-
-            .hero-visual {
-                height: 400px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
+            .footer-content { grid-template-columns: 1fr; gap: 40px; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
         }
 
         @media (max-width: 640px) {
-            .container {
-                padding: 0 20px;
-            }
-
-            header {
-                padding: 60px 0 30px;
-            }
-
-            .hero {
-                padding: 80px 0;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                flex-wrap: wrap;
-                gap: 20px;
-            }
+            .container { padding: 0 20px; }
+            header { padding: 60px 0 30px; }
+            .hero { padding: 80px 0; }
+            .projects-grid { grid-template-columns: 1fr; }
+            nav { flex-wrap: wrap; gap: 20px; }
+            .skills-grid { grid-template-columns: 1fr; }
         }
 
-        /* Scroll animations */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -836,31 +677,13 @@
             transform: translateY(0);
         }
 
-        /* Cursor follower */
-        .cursor-follower {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), rgba(34, 211, 238, 0.2));
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.2s ease-out, opacity 0.2s ease;
-            opacity: 0;
-            mix-blend-mode: screen;
-        }
 
-        .cursor-follower.active {
-            opacity: 1;
-            transform: scale(1.5);
-        }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Scroll progress indicator */
         .scroll-progress {
             position: fixed;
             top: 0;
@@ -873,7 +696,6 @@
             box-shadow: 0 0 10px var(--accent);
         }
 
-        /* Floating action button */
         .scroll-to-top {
             position: fixed;
             bottom: 30px;
@@ -895,19 +717,9 @@
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
         }
 
-        .scroll-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-to-top:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.7);
-        }
-
-        .scroll-to-top::before {
-            content: '↑';
-        }
+        .scroll-to-top.visible { opacity: 1; transform: translateY(0); }
+        .scroll-to-top:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 15px 40px rgba(99, 102, 241, 0.7); }
+        .scroll-to-top::before { content: '↑'; }
     </style>
 </head>
 <body>
@@ -924,8 +736,9 @@
         <div class="particle"></div>
         <div class="particle"></div>
     </div>
-    <div class="cursor-follower"></div>
+
     <div class="scroll-to-top"></div>
+
     <div class="container">
         <header>
             <div class="header-content">
@@ -935,7 +748,6 @@
                 </div>
                 <nav>
                     <a href="#work"><span>Work</span></a>
-                    <a href="#about"><span>About</span></a>
                     <a href="#contact"><span>Contact</span></a>
                 </nav>
             </div>
@@ -945,17 +757,19 @@
             <div class="hero-grid">
                 <div class="hero-text">
                     <h2>Building robust applications with Java & modern tech.</h2>
-                    <p>Specialized in full stack development with Java, Spring, and modern frameworks. Transforming complex business requirements into secure, maintainable solutions that drive real impact.</p>
+                    <p>Specialized in full stack development with Java, Spring, and React. Transforming complex business requirements into secure, maintainable solutions that drive real impact.</p>
                     <a href="#work" class="cta-button">View My Work</a>
                 </div>
                 <div class="hero-visual">
+                    <!-- Card 1: Backend — FIX: Added Apache Kafka -->
                     <div class="floating-card">
                         <div class="card-content">
                             <div class="card-icon">☕</div>
                             <div class="card-title">Backend</div>
-                            <div class="card-desc">Java, Spring, Spring MVC, Spring Integration, JMS, ActiveMQ</div>
+                            <div class="card-desc">Java, Spring, Spring MVC, Spring Integration, JMS, ActiveMQ, Apache Kafka</div>
                         </div>
                     </div>
+                    <!-- Card 2: Frontend -->
                     <div class="floating-card">
                         <div class="card-content">
                             <div class="card-icon">⚡</div>
@@ -963,11 +777,12 @@
                             <div class="card-desc">React, Redux, JavaScript, JSP, HTML, CSS</div>
                         </div>
                     </div>
+                    <!-- Card 3: Database & Tools — FIX: Removed Jenkins -->
                     <div class="floating-card">
                         <div class="card-content">
                             <div class="card-icon">🗄️</div>
                             <div class="card-title">Database & Tools</div>
-                            <div class="card-desc">Oracle, SQL Server, Docker, Jenkins, Git, SonarQube</div>
+                            <div class="card-desc">Oracle, SQL Server, Docker, Git, SonarQube</div>
                         </div>
                     </div>
                 </div>
@@ -980,11 +795,11 @@
                 <span class="count">01 Project</span>
             </div>
             <div class="projects-grid">
-                <!-- Crown Clothing E-commerce -->
                 <article class="project-card">
                     <div class="project-number">01</div>
                     <h4>Crown Clothing</h4>
-                    <p class="project-description">A modern e-commerce platform for fashion retail featuring shopping cart functionality, product catalog with categorization, and secure checkout flow. Built with React and Context API for seamless state management and responsive user experience.</p>
+                    <!-- FIX: replaced Context API with Redux -->
+                    <p class="project-description">A modern e-commerce platform for fashion retail featuring shopping cart functionality, product catalog with categorization, and secure checkout flow. Built with React and Redux for seamless state management and responsive user experience.</p>
                     <div class="project-tags">
                         <span class="tag">React</span>
                         <span class="tag">Redux</span>
@@ -999,6 +814,8 @@
                 </article>
             </div>
         </section>
+
+
 
         <footer id="contact">
             <div class="footer-content">
@@ -1028,85 +845,35 @@
         </footer>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Scroll progress bar
+    <script>
         const scrollProgress = document.querySelector('.scroll-progress');
         window.addEventListener('scroll', () => {
             const scrollTop = window.pageYOffset;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            scrollProgress.style.width = scrollPercent + '%';
+            scrollProgress.style.width = ((scrollTop / docHeight) * 100) + '%';
         });
 
-        // Scroll to top button
         const scrollToTopBtn = document.querySelector('.scroll-to-top');
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
-            }
+            scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 300);
         });
 
         scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Cursor follower effect
-        const cursorFollower = document.querySelector('.cursor-follower');
-        let mouseX = 0, mouseY = 0;
-        let followerX = 0, followerY = 0;
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        function animateCursor() {
-            const dx = mouseX - followerX;
-            const dy = mouseY - followerY;
-            
-            followerX += dx * 0.1;
-            followerY += dy * 0.1;
-            
-            cursorFollower.style.left = followerX - 20 + 'px';
-            cursorFollower.style.top = followerY - 20 + 'px';
-            
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-
-        // Activate cursor on interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .project-card');
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => cursorFollower.classList.add('active'));
-            el.addEventListener('mouseleave', () => cursorFollower.classList.remove('active'));
-        });
-
-        // Scroll reveal animation
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -80px 0px'
-        };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('revealed');
-                    }, index * 100);
+                    setTimeout(() => entry.target.classList.add('revealed'), index * 100);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
 
-        document.querySelectorAll('.scroll-reveal').forEach((el) => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 
-        // Parallax effect on hero cards
         const heroVisual = document.querySelector('.hero-visual');
         const floatingCards = document.querySelectorAll('.floating-card');
 
@@ -1118,61 +885,32 @@
 
                 floatingCards.forEach((card, index) => {
                     const intensity = (index + 1) * 15;
-                    const rotateY = x * intensity;
-                    const rotateX = -y * intensity;
-                    
                     card.style.transform = `
                         perspective(1000px)
-                        rotateY(${rotateY}deg)
-                        rotateX(${rotateX}deg)
+                        rotateY(${x * intensity}deg)
+                        rotateX(${-y * intensity}deg)
                         translateZ(20px)
                     `;
                 });
             });
 
             heroVisual.addEventListener('mouseleave', () => {
-                floatingCards.forEach((card) => {
-                    card.style.transform = '';
-                });
+                floatingCards.forEach(card => card.style.transform = '');
             });
         }
 
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     const headerHeight = document.querySelector('header').offsetHeight;
-                    const targetPosition = target.offsetTop - headerHeight - 20;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: target.offsetTop - headerHeight - 20, behavior: 'smooth' });
                 }
             });
         });
-         // Project card tilt effect
-        const projectCards = document.querySelectorAll('.project-card');
-        
-        projectCards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 20;
-                const rotateY = (centerX - x) / 20;
-                
-                card.style.transform = `
-                    perspective(1000px)
-                    rotateX(${rotateX}deg)
-                    rotateY(${rotateY}deg)
-                    translateY(-8px)
-                    scale(1.02)
-                `;
-            });
+
+
+    </script>
+</body>
+</html>
